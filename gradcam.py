@@ -7,10 +7,14 @@ import torch
 
 parser = argparse.ArgumentParser(description='GradCAM')
 parser.add_argument('path',type=str, help='image path')
+#parser.add_argument('state_dict_path',type=str, help='state_dict_path')
+
 args = parser.parse_args()
 
 
 model = resnet.ResNet50()
+#model.load_state_dict(torch.load(args.state_dict_path))
+
 image_path = args.path
 img = cv2.imread(image_path, 1)
 img = np.float32(cv2.resize(img, (224, 224))) / 255
