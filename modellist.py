@@ -1,4 +1,4 @@
-from model import vgg, resnet, densenet, efficientnet, mobilenet
+from model import vgg, resnet, densenet, efficientnet, mobilenetv3
 
 
 def Modellist(model_name, num_classes = 1000):
