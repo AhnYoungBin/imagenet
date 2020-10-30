@@ -192,40 +192,26 @@ class EfficientNet(nn.Module):
         return x
 
 
-def _efficientnet(arch, **kwargs):
+def _efficientnet(arch, num_classes=1000, **kwargs):
     width_mult, depth_mult, _, dropout_rate = params[arch]
-    model = EfficientNet(width_mult, depth_mult, dropout_rate, **kwargs)
+    model = EfficientNet(width_mult, depth_mult, dropout_rate, num_classes=num_classes, **kwargs)
 
     return model
 
 
-def efficientnet_b0( **kwargs):
-    return _efficientnet('efficientnet_b0', **kwargs)
+def efficientnet_b0(num_classes=1000, **kwargs):
+    return _efficientnet('efficientnet_b0', num_classes, **kwargs)
+def efficientnet_b1(num_classes=1000, **kwargs):
+    return _efficientnet('efficientnet_b1', num_classes, **kwargs)
+def efficientnet_b2(num_classes=1000, **kwargs):
+    return _efficientnet('efficientnet_b2', num_classes, **kwargs)
+def efficientnet_b3(num_classes=1000, **kwargs):
+    return _efficientnet('efficientnet_b3', num_classes, **kwargs)
+def efficientnet_b4(num_classes=1000, **kwargs):
+    return _efficientnet('efficientnet_b4', num_classes, **kwargs)
+def efficientnet_b5(num_classes=1000, **kwargs):
+    return _efficientnet('efficientnet_b5', num_classes, **kwargs)
+def efficientnet_b6(num_classes=1000, **kwargs):
+    return _efficientnet('efficientnet_b6', num_classes, **kwargs)
 
 
-def efficientnet_b1( **kwargs):
-    return _efficientnet('efficientnet_b1', **kwargs)
-
-
-
-def efficientnet_b2(**kwargs):
-    return _efficientnet('efficientnet_b2', **kwargs)
-
-
-def efficientnet_b3(**kwargs):
-    return _efficientnet('efficientnet_b3', **kwargs)
-
-
-def efficientnet_b4(**kwargs):
-    return _efficientnet('efficientnet_b4', **kwargs)
-
-
-def efficientnet_b5(**kwargs):
-    return _efficientnet('efficientnet_b5', **kwargs)
-
-
-def efficientnet_b6(**kwargs):
-    return _efficientnet('efficientnet_b6', **kwargs)
-
-def efficientnet_b7(**kwargs):
-    return _efficientnet('efficientnet_b7', **kwargs)
