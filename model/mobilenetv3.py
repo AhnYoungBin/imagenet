@@ -176,7 +176,7 @@ class MobileNetV3(nn.Module):
                 m.bias.data.zero_()
 
 
-def mobilenetv3_large(**kwargs):
+def mobilenetv3_large(num_classes = 1000,**kwargs):
     """
     Constructs a MobileNetV3-Large model
     """
@@ -198,10 +198,10 @@ def mobilenetv3_large(**kwargs):
         [5,   6, 160, 1, 1, 1],
         [5,   6, 160, 1, 1, 1]
     ]
-    return MobileNetV3(cfgs, mode='large', **kwargs)
+    return MobileNetV3(cfgs, mode='large',num_classes=num_classes, **kwargs)
 
 
-def mobilenetv3_small(**kwargs):
+def mobilenetv3_small(num_classes=1000, **kwargs):
     """
     Constructs a MobileNetV3-Small model
     """
@@ -220,4 +220,4 @@ def mobilenetv3_small(**kwargs):
         [5,    6,  96, 1, 1, 1],
     ]
 
-    return MobileNetV3(cfgs, mode='small', **kwargs)
+    return MobileNetV3(cfgs, mode='small',num_classes=num_classes, **kwargs)
